@@ -44,13 +44,6 @@
 #id2{
   text-align: center;
 }
-footer{
-  text-align: center;
-  padding: 3px;
-  background-color:crimson;
-  color:cornsilk;
-  margin-bottom:5%
-}
 
 .left {
   background-color:darkcyan;
@@ -89,10 +82,58 @@ footer{
   background-color:crimson;
   color:cornsilk;
 }
+
+
+/*style added for experiment*/
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+@keyframes gradient {
+			0% {
+					background-position: 0% 50%;
+			}
+			50% {
+					background-position: 100% 50%;
+			}
+			100% {
+					background-position: 0% 50%;
+			}
+	}
+/*ended style experiment*/
     </style>
 </head>
 
-<body style="background-color:goldenrod;background-image: url();" >
+
+<!--added for experiment--><ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">Coming Soon</a></li>
+  <li><a href="#contact">Coming Soon</a></li>
+  <li><a href="#about">Coming Soon</a></li>
+</ul><!--end-->
+<body style="background: linear-gradient(65deg, #864141 , #055c52 , #3c86e7, #000000);
+background-size: 400% 400%;
+animation:gradient 10s ease infinite;">
 
   <header>
   <h1 style="text-align: center; color:cornsilk;"><span id="heading"><u>THE NUMBER GAME</u></span></h1>
@@ -132,7 +173,7 @@ footer{
     </main>
 
     <div style="text-align: center; font-family: 'Courier New', Courier, monospace; font-size: x-large; font-weight: bold;">
-      Toggling Letters:<form>
+      Dancing Text:<form>
         <input type="text" onkeydown="myKeyDown(this)" onkeyup="myKeyUp(this)" size="70" style="height: 50px; border:10px solid rosybrown;">
       </form>
     </div>
