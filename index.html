@@ -112,6 +112,9 @@ li a:hover {
   background-color: #111;
 }
 
+#demo{
+  text-align: center;
+}
 @keyframes gradient {
 			0% {
 					background-position: 0% 50%;
@@ -206,6 +209,13 @@ animation:gradient 10s ease infinite;">
         <button id="jCaes" style="cursor: pointer;" onmouseover="doTime()" onmouseout="doUntime()"><img src="https://static.vecteezy.com/system/resources/previews/009/342/688/original/clock-icon-clipart-design-illustration-free-png.png" height="30" width="30"></button>
 			<br/>Visitor's Count :- <a href="https://www.freecounterstat.com" title="free hit counter"><img src="https://counter8.optistats.ovh/private/freecounterstat.php?c=a7ke5rwjr1pe5mxyukkguk83lmexk87t" border="0" title="free hit counter" alt="free hit counter"></a>
 		</div></section>
+
+
+    <br/>
+    <div id="demo">
+      <h1>The XMLHttpRequest Object</h1>
+      <button type="button" onclick="loadDoc()">Change Content</button>
+      </div>
 </body>
     <script>
       var rand1;
@@ -258,6 +268,17 @@ animation:gradient 10s ease infinite;">
         //  document.getElementById("jCaes").textContent=<img src='https://static.vecteezy.com/system/resources/previews/009/342/688/original/clock-icon-clipart-design-illustration-free-png.png'></img>;
         //}
 
+        //AJAX example
+        function loadDoc() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("demo").innerHTML =this.responseText;
+            }
+          }
+        xhttp.open("GET", "AJAX.txt", true);
+        xhttp.send();
+      }
 
 
         //Call by Value and Reference Examples in JavaScript
@@ -347,6 +368,33 @@ animation:gradient 10s ease infinite;">
         console.log(trial.find(happy));
         console.log(trial.findIndex(happy));
         console.log(trial.findLastIndex(happy));
+
+
+
+        //closure example
+        /*function test()
+        {
+          let tested=10;
+          function testing(trial)
+          {
+            return trial+10;
+          }
+          return testing(test)
+        }
+        console.log(test());*/
+        function add() {
+          let counter = 20;
+          function plus() 
+          {
+            counter += 15;
+          }
+          plus();  
+          return counter;
+        }
+
+        console.log(add());
+
+        
         </script>
 </body>
 </html>
